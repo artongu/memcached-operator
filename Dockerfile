@@ -15,6 +15,7 @@ COPY api/ api/
 COPY controllers/ controllers/
 
 # Build
+RUN go env -w GOPROXY=https://goproxy.cn
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -o manager main.go
 
 # Use distroless as minimal base image to package the manager binary
