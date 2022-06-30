@@ -30,7 +30,7 @@ type MemcachedSpec struct {
 
 	// Foo is an example field of Memcached. Edit memcached_types.go to remove/update
 	//Foo string `json:"foo,omitempty"`
-	
+
 	//+kubebuilder:validation:Minimum=0
 	Size int32 `json:"size"`
 }
