@@ -171,7 +171,8 @@ func (r *MemcachedReconciler) deploymentForMemcached(m *cachev1alpha1.Memcached)
 						Name:  "memcached",
 						// Ensure restrictive context for the container
 						SecurityContext: &corev1.SecurityContext{
-							RunAsNonRoot:             &[]bool{true}[0],
+							//RunAsNonRoot:             &[]bool{true}[0],
+							RunAsUser:                &[]int64{1000}[0],
 							AllowPrivilegeEscalation: &[]bool{false}[0],
 							Capabilities: &corev1.Capabilities{
 								Drop: []corev1.Capability{
